@@ -1,0 +1,30 @@
+#bop_email_template_attachments h2 span:before {
+  content: "\f546";
+  font-family: dashicons;
+}
+
+#bop_email_template_attachments .attachment-thumbs .attachment-thumb {
+  float: left;
+  width: 46%;
+  padding: 2%;
+}
+
+#bop_email_template_attachments .attachment-thumbs {
+  position: relative;
+  width: 100%;
+}
+
+#bop_email_template_attachments .attachment-thumbs .attachment-thumb img {
+  width: 100%;
+}
+
+#bop_email_template_attachments .attachment-thumbs .attachment-thumb span {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+#bop_email_template_attachments #bop-mail-attachments-upload-btn{
+  width:100%;
+}
