@@ -64,6 +64,8 @@ add_action( 'add_meta_boxes', function( $pt ){
     __( 'Email Headers', 'bop-mail' ),
     function( $p ){
       ?>
+      <label for="bop-mail-to"><?php _e( 'To: ' ) ?></label>
+      <input type="text" name="bop-mail-to" value="<?php echo esc_attr( get_post_meta( $p->ID, 'To_address', true ) ) ?>" class="regular-text"><br>
       <label for="bop-mail-from"><?php _e( 'From: ' ) ?></label>
       <input type="text" name="bop-mail-from" value="<?php echo esc_attr( get_post_meta( $p->ID, 'From_address', true ) ) ?>" class="regular-text"><br>
       <label for="bop-mail-reply-to"><?php _e( 'Reply-To: ' ) ?></label>
@@ -150,6 +152,10 @@ add_action( 'save_post_bop_email_template', function( $pid ){
 		$pid = $parent_id;
   
   if ( ! current_user_can( 'edit_page', $pid ) ) return;
+  
+  if( isset( $_POST['bop-mail-to'] ) ){
+    update_post_meta( $pid, 'To_address', $_POST['bop-mail-to'] );
+  }
   
   if( isset( $_POST['bop-mail-from'] ) ){
     update_post_meta( $pid, 'From_address', $_POST['bop-mail-from'] );
