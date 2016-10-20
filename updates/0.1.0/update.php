@@ -32,7 +32,7 @@ $sql = "CREATE TABLE IF NOT EXISTS {$wpdb->bop_mail_notifications} (
     meta_key varchar(255) default NULL,
     meta_value longtext,
     PRIMARY KEY  (meta_id),
-    KEY notification_id (notification_id),
+    KEY notification_id (bop_mail_notification_id),
     KEY meta_key (meta_key($max_index_length))
   ) $charset_collate;
 		";
