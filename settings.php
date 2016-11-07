@@ -54,7 +54,7 @@ add_action( 'admin_init', function(){
     function(){
       $setting = get_option( 'bop_mail_use_wp_cron' );
       ?>
-      <input type="checkbox" name="bop_mail_use_wp_cron"<?php echo isset( $setting ) && $setting ? ' checkbox' : ''; ?>>
+      <input type="checkbox" name="bop_mail_use_wp_cron"<?php echo isset( $setting ) && $setting ? ' checked' : ''; ?>>
       <?php
     },
     'general',
@@ -80,7 +80,7 @@ add_action( 'admin_init', function(){
       ?>
       <select name="bop_mail_wp_cron_schedule">
         <?php foreach( $schedules as $schedule => $schedule_details ): ?>
-          <option value="<?php echo esc_attr( $schedule ) ?>"><?php echo esc_html( $schedule_details['display'] ) ?></option>
+          <option value="<?php echo esc_attr( $schedule ) ?>"<?php echo $setting == $schedule ? ' selected' : '' ?>><?php echo esc_html( $schedule_details['display'] ) ?></option>
         <?php endforeach ?>
       </select>
       <?php

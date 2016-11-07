@@ -96,7 +96,8 @@ class Bop_Mail_Notification{
     
     $formats = ['%d', '%s', '%d', '%d'];
     
-    $this->id = $wpdb->insert( $wpdb->bop_mail_notifications, $insert_fields, $formats );
+    $wpdb->insert( $wpdb->bop_mail_notifications, $insert_fields, $formats );
+    $this->id = $wpdb->insert_id;
     return $this;
   }
   

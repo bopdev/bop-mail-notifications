@@ -59,6 +59,8 @@ register_activation_hook( bop_mail_plugin_path( 'init.php' ), function(){
 		
 		update_option( 'bop_mail_version', $pd['Version'], false );
 	}
+  
+  require_once( bop_mail_plugin_path( "activate.php" ) );
 } );
 
 

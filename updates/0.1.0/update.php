@@ -48,7 +48,3 @@ $schedules = array_keys( wp_get_schedules() );
 add_option( 'bop_mail_wp_cron_schedule', $schedules[0], '', 'yes' );
 
 add_option( 'bop_mail_use_wp_cron', true, '', 'yes' );
-
-
-//WP Cron
-wp_schedule_event( time(), $schedules[0], 'bop_mail_wp_cron' );
